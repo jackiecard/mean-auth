@@ -1,0 +1,30 @@
+
+<div ng-include="'partials/user/includes/top.html'"></div>
+<br><br>
+<div class="row">
+
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-default axle-panel">
+            <div class="panel-body">
+                <h1>Sign Up</h1>
+                <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+                <form class="form form-register" ng-submit="register()">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" name="username" ng-model="registerForm.username" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" ng-model="registerForm.password" required>
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-warning" ng-disabled="disabled">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div ng-include="'partials/user/includes/bottom.html'"></div>

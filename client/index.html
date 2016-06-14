@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>MEAN Auth</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+</head>
+
+<div class="container">
+    <div ng-view></div>
+</div>
+
+<!-- scripts -->
+<script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
+<script src="./main.js"></script>
+<script src="/js/user/services/authService.js"></script>
+<script src="/js/user/controllers/loginController.js"></script>
+<script src="/js/user/controllers/logoutController.js"></script>
+<script src="/js/user/controllers/registerController.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+node_modules
+_old
+.DS_Store
+.idea/.name
+.idea/encodings.xml
+.idea/mean-auth.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
