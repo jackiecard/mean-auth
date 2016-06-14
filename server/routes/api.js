@@ -3,6 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 
 var User = require('../models/user.js');
+var Profile = require('../models/profile.js');
 
 
 router.post('/register', function(req, res) {
@@ -37,8 +38,10 @@ router.post('/login', function(req, res, next) {
           err: 'Could not log in user'
         });
       }
+
       res.status(200).json({
-        status: 'Login successful!'
+        status: 'Login successful!',
+        username: user.username
       });
     });
   })(req, res, next);
@@ -61,5 +64,33 @@ router.get('/status', function(req, res) {
     status: true
   });
 });
+
+
+router.get('/profile/:username', function(req, res) {
+  Profile.findOne(req.params.username, function(err, profile) {
+    if (err)
+      res.send(err);
+
+    res.json(profile);
+
+  });
+})
+
+
+router.post('/profile/', function(req, res) {
+  var profile = new Profile();
+  profile.username = req.body.username;
+  profile.firstName = req.body.firstName;
+  profile.lastName = req.body.lastName;
+  profile.email = req.body.email;
+  profile.telephone = req.body.telephone;
+
+  profile.save(function(err, profileCreated) {
+    if (err)
+      res.send(err);
+
+    res.json(profileCreated);
+  });
+})
 
 module.exports = router;

@@ -4,6 +4,7 @@ myApp.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: '/partials/home.html',
+            controller: 'profileController',
             access: {restricted: true}
         })
         .when('/login', {
