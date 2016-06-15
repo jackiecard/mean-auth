@@ -1,7 +1,7 @@
-node_modules
-bower_components
+
 _old
 .DS_Store
+.idea
 .idea/.name
 .idea/encodings.xml
 .idea/mean-auth.iml
