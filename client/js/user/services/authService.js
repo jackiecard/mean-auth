@@ -2,8 +2,8 @@
  * Created by jackie on 6/14/16.
  */
 angular.module('myApp').factory('AuthService',
-    ['$q', '$timeout', '$http',
-        function ($q, $timeout, $http) {
+    ['$q', '$timeout', '$http', '$localStorage',
+        function ($q, $timeout, $http, $localStorage, $scope) {
 
             // create user variable
             var user = null;
@@ -32,6 +32,16 @@ angular.module('myApp').factory('AuthService',
                     });
             }
 
+            function setUsername(username){
+                $localStorage.userCred = username;
+            }
+
+            /*function getUsername(){
+                $scope.usernameAuth = $localStorage.userCred;
+                console.log($scope.usernameAuth);
+                return $scope.usernameAuth;
+            }*/
+
             function login(username, password) {
 
                 // create a new instance of deferred
@@ -44,6 +54,9 @@ angular.module('myApp').factory('AuthService',
                     .success(function (data, status) {
                         if(status === 200 && data.status){
                             user = true;
+
+                            setUsername(username);
+
                             deferred.resolve();
                         } else {
                             user = false;

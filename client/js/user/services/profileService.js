@@ -7,11 +7,16 @@ angular.module('myApp').factory('ProfileService',
 
             return {
                 getProfile : function(username) {
+
                     return $http.get('/user/profile/' + username);
                 },
 
                 register : function(profile) {
                     return $http.post('/user/profile/', profile);
+                },
+
+                update : function(profile) {
+                    return $http.put('/user/profile/', profile);
                 }
             }
 
